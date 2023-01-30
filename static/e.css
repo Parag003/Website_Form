@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
 
 @font-face {
-  font-family: GraublauWeb;
-  src: url("path/GraublauWeb.otf") format("opentype");
+  font-family: "gotham";
+  src: url("/static/Gotham-Bold.otf");
 }
 
    * {
@@ -12,6 +12,7 @@
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
+    font-family:"gotham";
    }
 
    body {
