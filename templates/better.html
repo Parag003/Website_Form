@@ -1,0 +1,100 @@
+<html lang="en">
+{%load static%}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/better.css">
+</head>
+<body><div class="login-box" id =`1`>
+
+    <h2>1</h2>
+    <form id="my_form1" method="post" action="/submitted/">
+        {%csrf_token%}
+        <div id="inputs1">
+            <div class="user-box">
+                <input type="text" name="l_name" >
+                <label>Name of Leader</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="l_mail" >
+                <label>Mail</label>
+            </div>
+            <div class="user-box">
+                <input type="number" name="l_phone" >
+                <label>Phone</label>
+            </div>
+            <!-- <hr> -->
+        </div>
+        <div id="inputs2">
+            <div class="user-box">
+                <input type="text" name="l_name" >
+                <label>Name</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="l_mail" >
+                <label>Mail</label>
+            </div>
+        </div>
+    <h2>3</h2>
+            <div class="user-box">
+                <input type="text" name="l_name" >
+                <label>Name</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="l_mail" >
+                <label>Mail</label>
+            </div>
+        </div>
+    <h2>4</h2>
+        <div id="inputs4">
+            <div class="user-box">
+                <input type="text" name="l_name" >
+                <label>Name of Leader</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="l_mail" >
+                <label>Mail</label>
+            </div>
+        </div>
+        <div id="inputsp">
+            <div class="user-box">
+                <input type="password" name="password" >
+                <label>Password</label>
+            </div>
+        </div>
+        <a href="javascript:{}" onclick="document.getElementById('my_form1').submit();">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+        </a>
+    </form>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+            localStorage.setItem("t_no", {{t_no}});
+        </script>
+    <script src="/static/home.js">
+    </script>
+
+</body>
+
+</html>

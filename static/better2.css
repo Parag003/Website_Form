@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
+   * {
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+   }
+
+   body {
+    font-family: 'Arvo', serif;
+    font-size:15px;
+    margin: 0;
+    background:url(./images/bg-registration-form-5.jpg) no-repeat center center fixed;
+    background-size: cover;
+   }
+   @media (max-width: 680px) {
+    body {
+      background: url(./images/f.jpg) no-repeat center center fixed;
+      width: 100%;
+      background-size: cover;
+    }
+  }
+   p,
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6,
+   ul {
+    margin:0;
+   }
+
+   img {
+    max-width:100%;
+   }
+
+   ul {
+    padding-left:0;
+    margin-bottom:0;
+   }
+
+   a {
+    text-decoration:none;
+   }
+
+   a:hover {
+    text-decoration:none;
+   }
+
+   textarea {
+    resize:none;
+   }
+
+   :focus {
+    outline:none;
+   }
+
+   .wrapper {
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background-size:cover;
+    background-color: rgba(255, 255, 255, 0.06);
+   }
+
+   .inner {
+    min-width:850px;
+    margin:auto;
+    display:flex;
+    /* padding: 1190px; */
+   }
+
+   .image-holder {
+    width:50%;
+    max-height:550px;
+    opacity: 1;
+   }
+
+   img{
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(20px);
+   }
+
+   .option {
+    color:rgb(141, 81, 81);
+    text-align:center;
+    width:30px;
+   }
+
+   form {
+    width:100%;
+    background-color: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+    padding-top:63px;
+    padding-left:49px;
+    padding-right:50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 20px 20px 22px rgba(0, 0, 0, 0.2);
+    /* border-top-left-radius: 8px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 0; */
+    border-radius: 8px;
+  }
+
+   h1 {
+    font-size:35px;
+    text-align:center;
+    margin-bottom:38px;
+      color: #fff;
+      text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
+        animation: flicker 2s infinite alternate;
+   }
+
+
+   @keyframes flicker {
+      0%, 22%, 30%, 40%, 70%, 82%, 100% {
+        text-shadow:
+          0 0 4px rgb(64, 64, 82),
+          0 0 11px rgb(16, 20, 154),
+          0 0 19px rgb(105, 55, 55),
+          0 0 40px rgb(0, 110, 255),
+          0 0 80px rgb(25, 0, 255),
+          0 0 90px rgb(0, 30, 255),
+          0 0 100px rgb(170, 0, 255),
+          0 0 150px rgb(255, 0, 0);
+      }
+      20%, 24%, 55% {       
+        text-shadow: none;
+      }
+    }
+
+    .input-cursor{
+      display: inline-block;
+      width: 2px;
+      height: 22px;
+      background-color: white;
+      margin-left: 8px;
+      animation: blink .5s linear infinite alternate;
+    }
+
+    @keyframes blink {
+      0% {opacity: 1;}
+      40% {opacity: 1;}
+      60% {opacity: 0;}
+      100% {opacity: 0;}
+    }
+
+   .form-wrapper {
+    color:#fff;
+    display:flex;
+    align-items:center;
+    margin-bottom:16px;
+   }
+
+   .form-wrapper label {
+    width:32.92%;
+   }
+
+   .form-wrapper label.label-input {
+    transform:translateY(5px);
+   }
+
+   .form-wrapper label.label-comment {
+    transform:translateY(-18px);
+   }
+
+   .form-wrapper.form-select {
+    margin-bottom:10px;
+   }
+
+   .form-wrapper.form-price {
+    margin-bottom:19px;
+   }
+
+   .form-holder {
+    position:relative;
+   }
+
+   .form-holder i {
+    position:absolute;
+    transform:translateY(-21px);
+    left:22px;
+   }
+
+   .form-control {
+    width:67.08%;
+    height:25px;
+    display:block;
+    font-size:13px;
+    border:none;
+    border-bottom:1px solid #6967a1;
+    background:0 0;
+    color:rgb(255, 255, 255);
+    padding:0;
+   }
+
+   input:focus,
+   textarea:focus {
+    border-bottom:1px solid rgba(255,255,255,.8);
+   }
+
+   select.form-control {
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    cursor:pointer;
+    width:30px;
+    border:none;
+    font-size:15px;
+    transform:translateY(-1px);
+   }
+
+   button {
+    height:42px;
+    width:100%;
+    display:inline-flex;
+    border:none;
+    font-size:15px;
+    color:#ffffff;
+    align-items:center;
+    justify-content:center;
+    margin-top:24px;
+    cursor:pointer;
+    transition:all .5s ease;
+    background-image:-moz-linear-gradient(top,#cb6e7a 0%,#be6779 12%,#ae5e77 23%,#42236b 78%,#3e1a82 88%,#106e70 100%);
+    background-image:-webkit-linear-gradient(top,#cb6e7a 0%,#be6779 12%,#ae5e77 23%,#42236b 78%,#3e1a82 88%,#106e70 100%);
+    background-image:linear-gradient(to right,#cb6e7a 0%,#be6779 12%,#ae5e77 23%,#42236b 78%,#3e1a82 88%,#106e70 100%);
+   }
+
+   button:hover{
+    background-size:200% auto;
+    background-position:right center;
+   }
+
+   @media(max-width:991px) {
+    .inner {
+     min-width:auto;
+    }
+
+    form {
+     padding-top:30px;
+     padding-bottom:33px;
+    }
+
+    .image-holder {
+     max-height:590px;
+    }
+
+   }
+   
+   @media(max-width:767px) {
+    .inner {
+     display:block;
+    }
+    form {
+     width:100%;
+    }
+    .image-holder {
+     width:100%;
+    }
+    form {
+     padding:50px 20px;
+    }
+    .wrapper {
+     background:0 0;
+    }
+   }
+
+   .fa-chevron-up:before {
+    content: "\f077";
+    margin-left: 5px;
+   }
+
+
+
+
+
+
+.neon{
+    /* font-family: 'Monoton', cursive; */
+    /* font-size:130px; */
+    color: #FFD5FF;
+    /* position: absolute; */
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    font-weight: 400;
+    letter-spacing: 8px;
+    text-shadow: 1px 0px 4px #FFD5FF, 2px 0px 4px #FFD5FF, 3px 0px 4px #FFD5FF, 2px 0px 3px #D42CCA, 2px 3px 15px #D42CCA, 2px 0px 15px, 5px 0px 125px, 20px 0vw 200px #D42CCA,40px 0vw 200px #D42CCA;
+  }
+  
+  .flicker-slow{
+    animation: flicker 3s linear infinite;
+  }
+  
+  .flicker-fast{
+    animation: flicker 1s linear infinite;
+  }
+  
+  @keyframes flicker {
+      0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+          //text-shadow: none;
+      opacity: .99;
+          
+      }
+      20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+          opacity: 0.4;
+      }
+  }
+  
+  

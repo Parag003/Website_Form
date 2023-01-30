@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/better2.css">
+    <!-- <? php  include("/static/better2.php"); ?> -->
+</head>
+<body >
+    <div class="wrapper">
+        <div class="inner" style="padding: 150px;font-family:;">
+            <form action="/submitted/"style="padding: 50px;" id="my_form" method="post" >
+                {%csrf_token%}
+               <div id="register">
+                   <h1 class="neon"  data-text="U">RE<span class="flicker-slow">G</span>IS<span class="flicker-fast">T</span>ER</h1>
+                </div>
+                   <!-- <div class="form-wrapper form-select"> -->
+                       <!-- <label style ="" for="">People</label> -->
+                       <div class="form-wrapper" style = "margin-top:30px;">
+                        <label for="" class="label-input"style ="">Leader_Name</label>
+                        <input required ="required" type="text" name ="l_name" class="form-control">
+                    </div>
+                    
+                    <div class="form-wrapper" style = "margin-top:30px;">
+                        <label for="" class="label-input"style ="">Leader_Mail</label>
+                        <input required ="required" type="email" name ="l_mail" class="form-control">
+                    </div>
+                    
+        
+        
+                    <div class="form-wrapper" style = "margin-top:30px;">
+                        <label for="" class="label-input"style ="">Leader_Phone</label>
+                        <input required ="required" type="number" name ="l_phone" class="form-control">
+                    </div>
+
+        <div style="margin-top:45px; display: none;" id="2">
+
+            <h2 style="text-align: center;" class="neon" data-text="U"><span class="flicker-slow">2</span></h2>
+            
+            
+            <div class="form-wrapper" style = "margin-top:10px;">
+                <label for="" class="label-input"style ="">Name</label>
+                <input  type="text" name ="name2" class="form-control">
+            </div>
+            
+            
+            <div class="form-wrapper" style = "margin-top:30px;">
+                <label for="" class="label-input"style ="">Mail</label>
+                <input  type="email" name ="mail2" class="form-control">
+            </div>
+        </div>           
+        
+        <div style="margin-top:45px;display: none;" id = "3">
+         <h2 style="text-align: center;" class="neon" data-text="U"><span class="flicker-slow">3</span></h2>
+
+        
+                    <div class="form-wrapper" style = "margin-top:10px;">
+                        <label for="" class="label-input"style ="">Name</label>
+                        <input  type="text" name ="name3" class="form-control">
+                    </div>
+                    
+        
+        
+                    <div class="form-wrapper" style = "margin-top:30px;">
+                        <label for="" class="label-input"style ="">Mail</label>
+                        <input  type="email" name ="mail3" class="form-control">
+                    </div>
+        </div>
+        <div style="margin-top:45px;display: none;" id="4">
+
+            <h2 style="text-align: center;" class="neon" data-text="U"><span class="flicker-slow">4</span></h2>
+            
+            
+            <div class="form-wrapper" style = "margin-top:10px;">
+                <label for="" class="label-input"style ="">Name</label>
+                <input  type="text" name ="name4" class="form-control">
+            </div>
+            
+            
+            
+            <div class="form-wrapper" style = "margin-top:30px;">
+                <label for="" class="label-input"style ="">Mail</label>
+                <input  type="email" name ="mail4" class="form-control">
+            </div>
+            
+        </div>
+        <div class="form-wrapper" style = "margin-top:30px;">
+            <label for="" class="label-input"style ="">Password</label>
+            <input id ="pass1" type="password" name ="pass1" class="form-control">
+        </div>
+        <div class="form-wrapper" style = "margin-top:30px;">
+            <label for="" class="label-input"style ="">Confirm Password</label>
+            <input id ="pass2" type="password" name ="pass2" class="form-control">
+        </div>
+        {%if msg%}
+        <label for="" class="label-input"style ="color:pink;">{{msg}}</label>
+    {% endif %}
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <div class="g-recaptcha" style = "margin-top:35px" data-sitekey="6LcvgDQkAAAAAHPmUHmwovAw1636sPNPgdQS9Lx6"></div>
+
+    <button id ="but" type = "submit" style = "margin-top:70px;border-radius: 12px;margin-bottom:70px;" >
+        Register
+    </button>
+</form>
+</div>
+
+
+</div>
+</div>
+        
+        <script>
+            localStorage.setItem("t_no", {{t_no}});
+
+            // document.getElementsByClassName("g-recaptcha")[0].style.backgroundColor="black"
+            // .attributes( 'data-theme', 'dark' );
+
+
+            </script>
+    <script src ="/static/better2.js"></script>
+    
+</body>
+</html>
