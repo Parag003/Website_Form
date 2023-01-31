@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from home import views
 urlpatterns = [
-    path("", views.index, name="home"),
-    path("register/", views.register),
+    path("", views.reffer),
+    path("zerohour/register/page1/", views.index),
+    path("zerohour/register/page2/", views.register),
     path("submitted/",views.submitted)
 ]

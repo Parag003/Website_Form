@@ -10,6 +10,7 @@ import urllib
 from django.shortcuts import render, redirect
 from django.conf import settings
 from django.contrib import messages
+from django.shortcuts import redirect
 
 # from .models import Comment
 # from .forms import CommentForm
@@ -20,6 +21,9 @@ t_no=1
 t_name=""
 msg ={"msg":"team name already exits"}
 
+def reffer(request):
+    response = redirect('/zerohour/register/page1/')
+    return response
 
 def index(request):
     # context = {
@@ -112,7 +116,7 @@ def submitted(request):
 
 
         # checking data
-        if details.objects.filter(t_name=t_name).first()!=None:
+        if details.objects.filter(t_name=t_name).first()!=None and name2!="":
             msg ={"msg":f"{t_name} already taken"}
             return render(request,"better2.html",msg)
 
