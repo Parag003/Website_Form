@@ -3,26 +3,6 @@
 t_no = 1
 t_no = localStorage.getItem('t_no')
 localStorage.clear()
-function getCookie(name) {
-    var cname = name + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i < ca.length; i++){
-        var c = ca[i];
-        while(c.charAt(0) == ' '){
-            c = c.substring(1);
-        }
-        if(c.indexOf(cname) == 0){
-            return c.substring(cname.length, c.length);
-        }
-    }
-    return "";
-}
-var tname = getCookie("teamname")
-
-if(tname !=""){
-    window.location.replace("www.backslashdb.n");
-}
 
 for(i=2;i<=t_no;i++){
     document.getElementById(`${i}`).style.display=""
@@ -49,9 +29,6 @@ function seterror(id, error){
 
 }
 
-function containsOnlyNumbers(str) {
-    return /^\d+$/.test(str);
-  }
 
 
 
@@ -79,8 +56,7 @@ function validateForm(){
 
     var phone = document.getElementById("l_phone").value;
     
-    // console.log(phone)
-    if(!(containsOnlyNumbers(phone))){
+    if(!(Number.isInteger(phone))){
     seterror("phone", "*Phone number should be in NUMBERS!");
     returnval=false;
     }
@@ -129,7 +105,6 @@ function validateForm(){
     }
 
     // console.log(returnval);
-
 
     return returnval;
 }
