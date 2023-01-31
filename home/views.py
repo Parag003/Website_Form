@@ -116,7 +116,7 @@ def submitted(request):
 
 
         # checking data
-        if details.objects.filter(t_name=t_name).first()!=None and name2!="":
+        if details.objects.filter(t_name=t_name).first()!=None and t_name !="":
             msg ={"msg":f"{t_name} already taken"}
             return render(request,"better2.html",msg)
 
