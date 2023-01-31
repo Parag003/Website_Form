@@ -4,6 +4,7 @@
   font-family: "gotham";
   src: url("/static/Gotham-Bold.otf");
 }
+
    * {
     -webkit-box-sizing:border-box;
     -moz-box-sizing:border-box;
@@ -28,6 +29,7 @@
       background-size: cover;
     }
   }
+
    p,
    h1,
    h2,
@@ -75,20 +77,25 @@
    .inner {
     min-width:850px;
     margin:auto;
-    display:flex;
-    /* padding: 1190px; */
+    /* display:flex; */
+    /* align-self: center; */
+    /* left:25%; */
+        /* top: 25%;
+    left: 25%;
+    margin-right: -0%;
+    transform: translate(-5%, -3%); */
    }
 
    .image-holder {
     width:50%;
     max-height:550px;
-    opacity: 1;
+    opacity: 0.5;
    }
 
    img{
-      border-top-left-radius: 8px;
+      border-top-left-radius: 0;
       border-top-right-radius: 8px;
-      border-bottom-left-radius: 8px;
+      border-bottom-left-radius: 0;
       border-bottom-right-radius: 8px;
       background-color: rgba(255, 255, 255, 0.06);
       backdrop-filter: blur(20px);
@@ -101,7 +108,7 @@
    }
 
    form {
-    width:100%;
+    width:50%;
     background-color: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(20px);
     padding-top:63px;
@@ -109,12 +116,11 @@
     padding-right:50px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 20px 20px 22px rgba(0, 0, 0, 0.2);
-    /* border-top-left-radius: 8px;
+    border-top-left-radius: 8px;
     border-top-right-radius: 0;
     border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 0; */
-    border-radius: 8px;
-  }
+    border-bottom-right-radius: 0;
+   }
 
    h1 {
     font-size:35px;
@@ -237,7 +243,7 @@
     display:inline-flex;
     border:none;
     font-size:15px;
-    color:#ffffff;
+    color:#fff;
     align-items:center;
     justify-content:center;
     margin-top:24px;
@@ -246,9 +252,9 @@
     background-image:-moz-linear-gradient(top,#cb6e7a 0%,#be6779 12%,#ae5e77 23%,#42236b 78%,#3e1a82 88%,#106e70 100%);
     background-image:-webkit-linear-gradient(top,#cb6e7a 0%,#be6779 12%,#ae5e77 23%,#42236b 78%,#3e1a82 88%,#106e70 100%);
     background-image:linear-gradient(to right,#cb6e7a 0%,#be6779 12%,#ae5e77 23%,#42236b 78%,#3e1a82 88%,#106e70 100%);
-   }
+    }
 
-   button:hover{
+   button:hover {
     background-size:200% auto;
     background-position:right center;
    }

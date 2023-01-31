@@ -10,7 +10,7 @@
 <body >
     <div class="wrapper">
         <div class="inner" style="padding: 150px;font-family:;">
-            <form action="/submitted/"style="padding: 50px;" id="my_form" method="post" >
+            <form action="/zerohour/submitted/"style="padding: 50px;" id="my_form" onsubmit="return validateForm()" method="post" >
                 {%csrf_token%}
                <div id="register">
                    <h1 class="neon"  data-text="U">RE<span class="flicker-slow">G</span>IS<span class="flicker-fast">T</span>ER</h1>
@@ -19,19 +19,19 @@
                        <!-- <label style ="" for="">People</label> -->
                        <div class="form-wrapper" style = "margin-top:30px;">
                         <label for="" class="label-input"style ="">Leader_Name</label>
-                        <input required ="required" type="text" name ="l_name" class="form-control">
+                        <input required ="required" type="text" id ="l_name" name ="l_name" class="form-control">
                     </div>
                     
                     <div class="form-wrapper" style = "margin-top:30px;">
                         <label for="" class="label-input"style ="">Leader_Mail</label>
-                        <input required ="required" type="email"name ="l_mail" class="form-control">
+                        <input required ="required" id ="l_mail" type="email"name ="l_mail" class="form-control">
                     </div>
                     
         
         
                     <div class="form-wrapper" style = "margin-top:30px;">
                         <label for="" class="label-input"style ="">Leader_Phone</label>
-                        <input required ="required" type="tel"   pattern="[0-9]{10}"  name ="l_phone" class="form-control">
+                        <input required ="required" type="tel" id ="l_phone"   pattern="[0-9]{10}"  name ="l_phone" class="form-control">
                     </div>
 
         <div style="margin-top:45px; display: none;" id="2">
@@ -41,13 +41,13 @@
             
             <div class="form-wrapper" style = "margin-top:10px;">
                 <label for="" class="label-input"style ="">Name</label>
-                <input  type="text" name ="name2" class="form-control">
+                <input  type="text" id ="name2" name ="name2" class="form-control">
             </div>
             
             
             <div class="form-wrapper" style = "margin-top:30px;">
                 <label for="" class="label-input"style ="">Mail</label>
-                <input  type="email" name ="mail2" class="form-control">
+                <input  type="email" id ="mail2" name ="mail2" class="form-control">
             </div>
         </div>           
         
@@ -57,14 +57,14 @@
         
                     <div class="form-wrapper" style = "margin-top:10px;">
                         <label for="" class="label-input"style ="">Name</label>
-                        <input  type="text" name ="name3" class="form-control">
+                        <input  type="text" id ="name3" name ="name3" class="form-control">
                     </div>
                     
         
         
                     <div class="form-wrapper" style = "margin-top:30px;">
                         <label for="" class="label-input"style ="">Mail</label>
-                        <input  type="email" name ="mail3" class="form-control">
+                        <input  type="email" id = "mail3" name ="mail3" class="form-control">
                     </div>
         </div>
         <div style="margin-top:45px;display: none;" id="4">
@@ -74,14 +74,14 @@
             
             <div class="form-wrapper" style = "margin-top:10px;">
                 <label for="" class="label-input"style ="">Name</label>
-                <input  type="text" name ="name4" class="form-control">
+                <input  type="text" id ="name4" name ="name4" class="form-control">
             </div>
             
             
             
             <div class="form-wrapper" style = "margin-top:30px;">
                 <label for="" class="label-input"style ="">Mail</label>
-                <input  type="email" name ="mail4" class="form-control">
+                <input  type="email" id="mail4" name ="mail4" class="form-control">
             </div>
             
         </div>
@@ -93,6 +93,9 @@
             <label for="" class="label-input"style ="">Confirm Password</label>
             <input id ="pass2" type="password" name ="pass2" class="form-control">
         </div>
+
+        <label for="" id ="formerror" class="label-input"style ="color:pink;"></label>
+
         {%if msg%}
         <label for="" class="label-input"style ="color:pink;">{{msg}}</label>
     {% endif %}
@@ -111,7 +114,6 @@
         
         <script>
             localStorage.setItem("t_no", {{t_no}});
-
             // document.getElementsByClassName("g-recaptcha")[0].style.backgroundColor="black"
             // .attributes( 'data-theme', 'dark' );
 

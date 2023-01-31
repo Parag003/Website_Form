@@ -1,7 +1,39 @@
-t_no = localStorage.getItem("t_no");
-localStorage.clear();
+function getCookie(name) {
+    var cname = name + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++){
+        var c = ca[i];
+        while(c.charAt(0) == ' '){
+            c = c.substring(1);
+        }
+        if(c.indexOf(cname) == 0){
+            return c.substring(cname.length, c.length);
+        }
+    }
+    return "";
+}
+var t_name = getCookie("teamname")
+console.log(t_name)
 
-i=1;
+
+if(t_name !=""){
+    window.location.replace("127.0.0.1:8000/zerohour/submitted2");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// i=1;
 
 // function add_div(){
 //     console.log("wifbiwf")
@@ -22,12 +54,12 @@ i=1;
 // }
 
 
-body = document.getElementsByTagName('body')[0]
-console.log(body)
-add_div()
-input = document.getElementById("input1")
+// body = document.getElementsByTagName('body')[0]
+// console.log(body)
+// add_div()
+// input = document.getElementById("input1")
 
-for(;i<=t_no;i++){
+// for(;i<=t_no;i++){
     
-}
+// }
 
