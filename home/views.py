@@ -103,9 +103,10 @@ def submitted(request):
             msg ={"msg":f"You are a Robot"}
             return render(request,"better2.html",msg)
         
-        if type(l_phone)!=int:
-            msg ={"msg":f"Phone number must be integer"}
-            return render(request,"better2.html",msg)
+        # print(type(l_phone))
+        # if type(l_phone)!=int:
+        #     msg ={"msg":f"Phone number must be integer"}
+        #     return render(request,"better2.html",msg)
 
 
 
