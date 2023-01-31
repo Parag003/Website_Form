@@ -81,7 +81,7 @@ def submitted(request):
 
         #confirm passwords
         if password!=pass2:
-            msg ={"msg":f"Passwords don't match {password} {pass2}"}
+            msg ={"msg":f"Passwords don't match"}
             return render(request,"better2.html",msg)
 
 
@@ -102,9 +102,18 @@ def submitted(request):
         if result['success']==False:
             msg ={"msg":f"You are a Robot"}
             return render(request,"better2.html",msg)
+        
+        if type(l_phone)!=int:
+            msg ={"msg":f"Phone number must be integer"}
+            return render(request,"better2.html",msg)
+
+
 
 
         # checking data
+        if details.objects.filter(t_name=t_name).first()!=None:
+            msg ={"msg":f"{t_name} already taken"}
+            return render(request,"better2.html",msg)
 
         if details.objects.filter(l_name=l_name).first()!=None:
             msg ={"msg":f"{l_name} already has a team"}
