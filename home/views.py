@@ -85,7 +85,7 @@ def submitted(request):
 
         #confirm passwords
         if password!=pass2:
-            msg ={"msg":f"Passwords don't match"}
+            msg ={"msg":f"Passwords don't match","t_no":t_n}
             return render(request,"better2.html",msg)
 
 
@@ -104,7 +104,7 @@ def submitted(request):
 
         # print("\n",result['success'])
         if result['success']==False:
-            msg ={"msg":f"You are a Robot"}
+            msg ={"msg":f"You are a Robot","t_no":t_no}
             return render(request,"better2.html",msg)
         
         # print(type(l_phone))
@@ -117,42 +117,42 @@ def submitted(request):
 
         # checking data
         if details.objects.filter(t_name=t_name).first()!=None and t_name !="":
-            msg ={"msg":f"{t_name} already taken"}
+            msg ={"msg":f"{t_name} already taken","t_no":t_no}
             return render(request,"better2.html",msg)
 
         if details.objects.filter(l_name=l_name).first()!=None:
-            msg ={"msg":f"{l_name} already has a team"}
+            msg ={"msg":f"{l_name} already has a team","t_no":t_no}
             return render(request,"better2.html",msg)
         
         if details.objects.filter(l_phone = l_phone).first()!=None:
-            msg ={"msg":f"{l_phone} is being used by another team member"}
+            msg ={"msg":f"{l_phone} is being used by another team member","t_no":t_no}
             return render(request,"better2.html",msg)
 
         if details.objects.filter(l_mail=l_mail).first()!=None:
-            msg ={"msg":f"{l_mail} is being used by another team member"}
+            msg ={"msg":f"{l_mail} is being used by another team member","t_no":t_no}
             return render(request,"better2.html",msg)
             # 2
         if details.objects.filter(name2=name2).first()!=None and name2!="":
             print(details.objects.filter(name2=name2).first())
-            msg ={"msg":f"{name2} already has a team"}
+            msg ={"msg":f"{name2} already has a team","t_no":t_no}
             return render(request,"better2.html",msg)
         if details.objects.filter(mail2=mail2).first()!=None and mail2 !="":
-            msg ={"msg":f"{mail2} is being used by another team member"}
+            msg ={"msg":f"{mail2} is being used by another team member","t_no":t_no}
             return render(request,"better2.html",msg)
         # 3
             
         if details.objects.filter(name3=name3).first()!=None and name3!="":
-            msg ={"msg":f"{name3} already has a team"}
+            msg ={"msg":f"{name3} already has a team","t_no":t_no}
             return render(request,"better2.html",msg)
         if details.objects.filter(mail3=mail3).first()!=None and mail3 !="":
-            msg ={"msg":f"{mail3} is being used by another team member"}
+            msg ={"msg":f"{mail3} is being used by another team member","t_no":t_no}
             return render(request,"better2.html",msg) 
         # 4
         if details.objects.filter(name4=name4).first()!=None and name4!="":
-            msg ={"msg":f"{name4} already has a team"}
+            msg ={"msg":f"{name4} already has a team","t_no":t_no}
             return render(request,"better2.html",msg)
         if details.objects.filter(mail4=mail4).first()!=None and  mail4 !="":
-            msg ={"msg":f"{mail4} is being used by another team member"}
+            msg ={"msg":f"{mail4} is being used by another team member","t_no":t_no}
             return render(request,"better2.html",msg)
         
         # checking done
