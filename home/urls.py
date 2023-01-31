@@ -17,8 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from home import views
 urlpatterns = [
-    path("", views.reffer),
+
+    path("", views.landing_page),
+    path("zerohour/",views.reffer),
     path("zerohour/register/page1/", views.index),
     path("zerohour/register/page2/", views.register),
-    path("submitted/",views.submitted)
+    path("zerohour/submitted/",views.submitted),
+    # path("zerohour/submitted2/",views.submitted2)
+
 ]

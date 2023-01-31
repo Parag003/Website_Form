@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Custom CSS Link -->
+    <link rel="stylesheet" href="/static/e.css">
+    <title>Backslash Event</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="inner">
+            <!-- <form action="/zerohour/register/page2/" id="my_form" method="post" style ="padding: 50px;width: 100%;" >
+                {%csrf_token%} -->
+               <div id="register">
+                   <h1 style="font-size:50px;" class="neon data-text="U"><span class="flicker-slow">Welcome,
+                    {{t_name}}</span></h1>
+                </div>
+                <div >
+                   <h1 class=" data-text="U"><span id="clock" class="flicker-slow"></span></h1>
+                </div>
+               
+        </div>
+    </div>
+    <script >
+
+        clock = document.getElementById('clock');
+
+        var date1 = new Date();
+        var date2 = new Date("02/03/2023");
+        // var date2 = new Date("07/30/2019");
+      
+         // To calculate the time difference of two dates
+        var Difference_In_Time = date2.getTime() - date1.getTime();
+      
+         // To calculate the no. of days between two dates
+         var Difference_In_Hours = Difference_In_Time / (1000 * 3600);
+        
+         clock.innerHTML=`${Math.round(Difference_In_Hours)} <br> <br>  till 0 hour`;
+        
+
+
+        
+
+    </script>
+    <script scr = "/static/done.js"></script>
+    <script src="https://kit.fontawesome.com/4b5d41d438.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

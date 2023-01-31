@@ -21,6 +21,10 @@ t_no=1
 t_name=""
 msg ={"msg":"team name already exits"}
 
+
+def landing_page(request):
+    return render(request,"landing_page.html")
+
 def reffer(request):
     response = redirect('/zerohour/register/page1/')
     return response
@@ -29,6 +33,11 @@ def index(request):
     # context = {
     #     "var": "sent"
     # }
+    if 't_name' in request.COOKIES:
+        t_name = request.COOKIES['t_name']
+        msg={'t_name':t_name}
+        return render(request,"done.html",msg)
+
     msg ={"msg":""}
     return render(request, "home.html",msg)
 
@@ -38,6 +47,12 @@ def register(request):
     global t_name
     t_no = request.POST.get("t_no")
     t_name = request.POST.get("t_name")
+
+
+    if 't_name' in request.COOKIES:
+        t_name = request.COOKIES['t_name']
+        mag={'t_name':t_name}
+        return render(request,"done.html",mag)
 
     if t_name:
 
@@ -66,6 +81,11 @@ def submitted(request):
     # print(type(t_no),t_no)
     # print(type(t_name),t_name)
     # print(request.method)
+ 
+    if 't_name' in request.COOKIES:
+        t_name = request.COOKIES['t_name']
+        msg={'t_name':t_name}
+        return render(request,"done.html",msg)
     if request.method == "POST":
         l_name = request.POST.get("l_name")
         l_mail = request.POST.get("l_mail")
@@ -82,10 +102,14 @@ def submitted(request):
         # ->10
         # print("\n hurupa\n")
         # print(type(l_phone),l_phone)
+        if 't_name' in request.COOKIES:
+            request.COOKIES['t_name']
+            msg={'t_name':t_name}
+            return render(request,"done.html",msg)
 
         #confirm passwords
         if password!=pass2:
-            msg ={"msg":f"Passwords don't match"}
+            msg ={"msg":f"Passwords don't match","t_no":t_n}
             return render(request,"better2.html",msg)
 
 
@@ -104,7 +128,7 @@ def submitted(request):
 
         # print("\n",result['success'])
         if result['success']==False:
-            msg ={"msg":f"You are a Robot"}
+            msg ={"msg":f"You are a Robot","t_no":t_no}
             return render(request,"better2.html",msg)
         
         # print(type(l_phone))
@@ -117,42 +141,42 @@ def submitted(request):
 
         # checking data
         if details.objects.filter(t_name=t_name).first()!=None and t_name !="":
-            msg ={"msg":f"{t_name} already taken"}
+            msg ={"msg":f"{t_name} already taken","t_no":t_no}
             return render(request,"better2.html",msg)
 
         if details.objects.filter(l_name=l_name).first()!=None:
-            msg ={"msg":f"{l_name} already has a team"}
+            msg ={"msg":f"{l_name} already has a team","t_no":t_no}
             return render(request,"better2.html",msg)
         
         if details.objects.filter(l_phone = l_phone).first()!=None:
-            msg ={"msg":f"{l_phone} is being used by another team member"}
+            msg ={"msg":f"{l_phone} is being used by another team member","t_no":t_no}
             return render(request,"better2.html",msg)
 
         if details.objects.filter(l_mail=l_mail).first()!=None:
-            msg ={"msg":f"{l_mail} is being used by another team member"}
+            msg ={"msg":f"{l_mail} is being used by another team member","t_no":t_no}
             return render(request,"better2.html",msg)
             # 2
         if details.objects.filter(name2=name2).first()!=None and name2!="":
             print(details.objects.filter(name2=name2).first())
-            msg ={"msg":f"{name2} already has a team"}
+            msg ={"msg":f"{name2} already has a team","t_no":t_no}
             return render(request,"better2.html",msg)
         if details.objects.filter(mail2=mail2).first()!=None and mail2 !="":
-            msg ={"msg":f"{mail2} is being used by another team member"}
+            msg ={"msg":f"{mail2} is being used by another team member","t_no":t_no}
             return render(request,"better2.html",msg)
         # 3
             
         if details.objects.filter(name3=name3).first()!=None and name3!="":
-            msg ={"msg":f"{name3} already has a team"}
+            msg ={"msg":f"{name3} already has a team","t_no":t_no}
             return render(request,"better2.html",msg)
         if details.objects.filter(mail3=mail3).first()!=None and mail3 !="":
-            msg ={"msg":f"{mail3} is being used by another team member"}
+            msg ={"msg":f"{mail3} is being used by another team member","t_no":t_no}
             return render(request,"better2.html",msg) 
         # 4
         if details.objects.filter(name4=name4).first()!=None and name4!="":
-            msg ={"msg":f"{name4} already has a team"}
+            msg ={"msg":f"{name4} already has a team","t_no":t_no}
             return render(request,"better2.html",msg)
         if details.objects.filter(mail4=mail4).first()!=None and  mail4 !="":
-            msg ={"msg":f"{mail4} is being used by another team member"}
+            msg ={"msg":f"{mail4} is being used by another team member","t_no":t_no}
             return render(request,"better2.html",msg)
         
         # checking done
@@ -161,8 +185,19 @@ def submitted(request):
         
         f = details(t_no = int(t_no),t_name=t_name, l_name=l_name, l_mail=l_mail, l_phone=int(l_phone), name2=name2,mail2=mail2, name3=name3, mail3=mail3, name4=name4, mail4=mail4, password=hashed)
         f.save()
-        return HttpResponse("Done")
-
+        few={"t_name":t_name}
+        response = render(request,"done.html",few)
+        response.set_cookie("t_name",t_name)
+        return response
 
     else:
         return HttpResponse("Error")
+
+
+
+
+def submitted2(request):
+    return render(request,"done2.html")
+    
+
+
