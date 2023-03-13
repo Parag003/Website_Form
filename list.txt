@@ -1,5 +1,0 @@
-django
-django-reacptcha
-django-admin-honey pot
-passlib
-bcrypt
