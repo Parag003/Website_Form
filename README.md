@@ -1,5 +1,8 @@
 # Form
-Made a registration form for my society
+Made a registration form for my society using django and sql lite.
+recaptcha authentication
+
+
 
 
 ![alt text](/screenshot/img6.png?raw=true)
