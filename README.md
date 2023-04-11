@@ -1,6 +1,7 @@
 # Form
-Made a registration form for my society using django and sql lite.
-recaptcha authentication
+I Made a registration form for my society work using django and sql lite. 
+
+ It has a recaptcha authentication
 
 
 
